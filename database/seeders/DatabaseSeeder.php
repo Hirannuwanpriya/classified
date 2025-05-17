@@ -18,8 +18,9 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'admin@classified.com',
+            'password' => bcrypt('admin'),
         ]);
 
         $categories = [
@@ -44,10 +45,10 @@ class DatabaseSeeder extends Seeder
                 'status' => 1,
             ]);
 
-            // Create advertisements for each category
-            Advertisement::factory(5)->create([
-                'category_id' => AdvertisementCategory::where('name', $category)->first()->id,
-            ]);
+//            // Create advertisements for each category
+//            Advertisement::factory(5)->create([
+//                'category_id' => AdvertisementCategory::where('name', $category)->first()->id,
+//            ]);
         }
     }
 }
