@@ -38,6 +38,11 @@
         }
     },
     "scripts": {
+        "refresh": [
+            "composer install --no-interaction --prefer-dist --optimize-autoloader",
+            "@php artisan db:wipe --ansi",
+            "@php artisan migrate:fresh --seed --ansi"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
