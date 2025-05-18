@@ -11,6 +11,8 @@ class Advertisement extends Model
 
     protected $fillable = [
         'title',
+        'slug',
+        'category_id',
         'content',
         'opening_hours',
         'location',
@@ -26,4 +28,25 @@ class Advertisement extends Model
         'modified_at' => 'datetime',
         'status' => 'integer'
     ];
+
+    //boot
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            // set slug using title value
+            $model->slug = strtolower(str_replace(' ', '-', $model->title));
+        });
+
+        static::updating(function ($model) {
+            $model->slug = strtolower(str_replace(' ', '-', $model->title));
+        });
+    }
+
+    //relation with advertisement category
+    public function category()
+    {
+        return $this->belongsTo(AdvertisementCategory::class, 'category_id');
+    }
 }
