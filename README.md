@@ -54,7 +54,6 @@ cd classified
 composer refresh
 npm install && npm run dev
 
-### 🔐 Sample Admin Login
 
 
 ## 🔐 Admin Panel
@@ -63,11 +62,15 @@ After running the custom refresh command, you can access the admin dashboard at:
 ```bash
 http://your-local-domain/admin
 
-### Default Admin Credentials
+### 🧾 Default Admin Credentials
+
+Use the following credentials to log in:
+
 - **Email:** `admin@classified.com`
 - **Password:** `admin`
 
-> ⚠️ **Important:** Please change the password immediately if deploying to production.
+> ⚠️ **Security Note:** For security reasons, please make sure to change the default admin password after the first login, especially in production environments.
+
 
 ## License
 
