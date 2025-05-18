@@ -25,8 +25,14 @@ class AdvertisementsController extends Controller
     }
 
     // Example function to handle a specific advertisement
-    public function show($id)
+    public function show(Request $request, $slug)
     {
-        return view('advertisements.show', ['id' => $id]);
+        $advertisement = (new Advertisement())
+            ->newQuery()
+            ->where('slug', $slug)
+            ->where('status', 1)
+            ->firstOrFail();
+
+        return view('advertisement.show', ['advertisement' => $advertisement]);
     }
 }

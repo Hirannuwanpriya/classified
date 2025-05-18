@@ -22,7 +22,7 @@ class AdvertisementFactory extends Factory
             'title' => $this->faker->sentence,
             'slug' => $this->faker->slug,
             'category_id' => AdvertisementCategory::factory(),
-            'content' => $this->faker->paragraph,
+            'content' => $this->faker->text(1000),
             'opening_hours' => $this->faker->time('H:i') . ' - ' . $this->faker->time('H:i'),
             'location' => $this->faker->address,
             'website_url' => $this->faker->url,
