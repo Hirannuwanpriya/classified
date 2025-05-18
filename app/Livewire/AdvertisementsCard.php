@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class AdvertisementsCard extends Component
 {
-    public Advertisement $advertisement;
+    public $advertisements = [];
 
     //mount
     public function mount()
@@ -17,11 +17,16 @@ class AdvertisementsCard extends Component
             ->newQuery()
             ->where('status', 1)
             ->orderBy('published_at', 'desc')
+            ->take(10)
             ->get();
     }
 
     public function render()
     {
-        return view('livewire.advertisements-card');
+        return view('livewire.advertisements-card',
+            [
+                'advertisement' => $this->advertisement,
+            ]
+        );
     }
 }

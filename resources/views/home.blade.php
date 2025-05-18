@@ -82,29 +82,6 @@
         </div>
     </section>
 
-    <!-- Cards -->
-    <section class="max-w-4xl mx-auto py-10 px-4 flex-1 space-y-6">
-        <h2 class="text-lg font-semibold mb-6">All Ad Listings</h2>
-        <!-- Ad Card -->
-        <div class="bg-white rounded shadow overflow-hidden flex flex-col md:flex-row">
-            <div class="md:w-1/3 w-full relative">
-                <img src="https://via.placeholder.com/300x200" alt="Travel Kit" class="object-cover w-full h-full"/>
-            </div>
-            <div class="md:w-2/3 p-4 flex flex-col justify-between">
-                <div>
-                    <p class="text-xs text-gray-400 mb-1">Others</p>
-                    <h2 class="text-lg font-semibold">Travel Kit</h2>
-                    <p class="text-sm text-gray-500 mt-1">San Francisco</p>
-                </div>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-indigo-600 font-bold">$580.00</span>
-                    <button class="text-gray-400 hover:text-red-500 text-xl">♡</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- More ad cards can follow the same structure -->
-    </section>
-
+    @livewire('advertisements-card')
 
 </x-layouts.app>
