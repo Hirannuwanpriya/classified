@@ -8,10 +8,17 @@ use Illuminate\Http\Request;
 class AdvertisementsController extends Controller
 {
     // Default function to handle the advertisements page
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->input('search');
+
         $advertisements = (new Advertisement())
             ->newQuery()
+            ->when($search, function ($query, $search) {
+                $query->where('title', 'like', "%{$search}%")
+                    ->orWhere('content', 'like', "%{$search}%")
+                    ->orWhere('location', 'like', "%{$search}%");
+            })
             ->where('status', 1)
             ->orderBy('published_at', 'desc')
             ->paginate(10);
