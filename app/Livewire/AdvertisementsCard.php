@@ -17,7 +17,7 @@ class AdvertisementsCard extends Component
             ->newQuery()
             ->where('status', 1)
             ->orderBy('published_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
     }
 
