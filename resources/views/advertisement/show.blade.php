@@ -9,8 +9,9 @@
                 <div class="rounded-lg bg-gray-50 shadow-xs ring-1 ring-gray-900/5">
                     <!-- Contact Info -->
                     <div class="mb-4 border-t-gray-300 px-4 py-8 ">
-                        <p class="text-sm text-gray-700"><strong>Url:</strong> <a href="{{ $advertisement->website_url }}">Link</a></p>
                         <p class="text-sm text-gray-700"><strong>Opening Hours:</strong> {{ $advertisement->opening_hours }}</p>
+                        <p class="text-sm text-gray-700"><strong>Location:</strong> {{ $advertisement->location }}</p>
+                        <p class="text-sm text-gray-700"><strong>Url:</strong> <a href="{{ $advertisement->website_url }}">Link</a></p>
                     </div>
                 </div>
             </div>
