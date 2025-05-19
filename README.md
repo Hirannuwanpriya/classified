@@ -62,9 +62,9 @@ After running the custom refresh command, you can access the admin dashboard at:
 ```bash
 http://your-local-domain/admin
 
-### 🧾 Default Admin Credentials
+### 🔐 Sample Admin Login
 
-Use the following credentials to log in:
+Use the following credentials to log in as an administrator:
 
 - **Email:** `admin@classified.com`
 - **Password:** `admin`
